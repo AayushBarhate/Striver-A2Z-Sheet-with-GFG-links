@@ -36,20 +36,65 @@
     
     </script>
     <link rel='dns-prefetch' href='//s.w.org'/>
-    <link href='https://fonts.gstatic.com' crossorigin rel='preconnect'/>
-    <link rel="alternate" type="application/rss+xml" title="takeUforward &raquo; Feed" href="https://takeuforward.org/feed/"/>
-    <link rel="alternate" type="application/rss+xml" title="takeUforward &raquo; Comments Feed" href="https://takeuforward.org/comments/feed/"/>
-    <link rel="alternate" type="application/rss+xml" title="takeUforward &raquo; Strivers A2Z DSA Course/Sheet Comments Feed" href="https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/feed/"/>
-    <script src="//www.googletagmanager.com/gtag/js?id=G-EBCP94LSBB" data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
-
-
-
-    <script type='text/javascript' src='https://takeuforward.org/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
-    <script type='text/javascript' src='https://takeuforward.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
-    <!--[if lt IE 9]>
-<script   type='text/javascript' src='https://takeuforward.org/wp-content/themes/maxwell/assets/js/html5shiv.min.js?ver=3.7.3' id='html5shiv-js'></script>
-<![endif]-->
-    <script type='text/javascript' src='https://takeuforward.org/wp-content/themes/maxwell/assets/js/svgxuse.min.js?ver=1.2.6' id='svgxuse-js'></script>
+    <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap' rel='stylesheet'/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <style>
+        /* Global Icon Styles */
+        .icon {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            fill: currentColor;
+        }
+        
+        .youtube-icon { color: #FF0000; }
+        .gfg-icon { color: #2F8D46; }
+        .leetcode-icon { color: #FFA116; }
+        
+        /* Fallback for missing images */
+        img[src*="lazy_placeholder"], 
+        img[data-src*="youtube-icon"] {
+            display: none !important;
+        }
+        
+        img[src*="lazy_placeholder"] + noscript img,
+        img[data-src*="youtube-icon"] + noscript img {
+            display: none !important;
+        }
+        
+        /* Replace broken images with Font Awesome icons */
+        a[href*="youtube.com"]::before {
+            content: "\f167";
+            font-family: "Font Awesome 6 Brands";
+            color: #FF0000;
+            font-size: 24px;
+            display: inline-block;
+        }
+        
+        a[href*="geeksforgeeks.org"]::before {
+            content: "\f121";
+            font-family: "Font Awesome 6 Solid";
+            color: #2F8D46;
+            font-size: 24px;
+            display: inline-block;
+        }
+        
+        a[href*="leetcode.com"]::before {
+            content: "\f1c0";
+            font-family: "Font Awesome 6 Solid";
+            color: #FFA116;
+            font-size: 24px;
+            display: inline-block;
+        }
+        
+        /* Hide the broken images when icons are shown */
+        a[href*="youtube.com"] img,
+        a[href*="geeksforgeeks.org"] img,
+        a[href*="leetcode.com"] img {
+            display: none !important;
+        }
+    </style>
     <link rel="https://api.w.org/" href="https://takeuforward.org/wp-json/"/>
     <link rel="alternate" type="application/json" href="https://takeuforward.org/wp-json/wp/v2/posts/6026"/>
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://takeuforward.org/xmlrpc.php?rsd"/>
@@ -64,6 +109,50 @@
     <meta name="msapplication-TileImage" content="https://takeuforward.org/wp-content/uploads/2021/09/cropped-logo_circle_red-270x270.gif"/>
 
     <style type="text/css" id="wp-custom-css">
+        /* Modern CSS Reset and Global Styles */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+        
+        .header-section {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .header-section h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0 0 1rem 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-section p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+
         .tags-modal {
             position: fixed;
             background: linear-gradient(149.45deg,rgba(255,255,255,.1) 14.25%,rgba(255,255,255,.4) 85.42%);
@@ -3442,6 +3531,112 @@
         .dark-theme details.top-level>table tbody tr td button img {
             filter: invert(15%)
         }
+        
+        /* Enhanced Modern Styling Overrides */
+        details.top-level {
+            border: none !important;
+            margin-bottom: 20px !important;
+            border-radius: 12px !important;
+            background: white !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+            overflow: hidden !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        details.top-level:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15) !important;
+            transform: translateY(-3px) !important;
+        }
+
+        details.top-level > summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: white !important;
+            padding: 20px !important;
+            font-weight: 600 !important;
+            font-size: 1.1rem !important;
+            border: none !important;
+            box-shadow: none !important;
+            backdrop-filter: none !important;
+        }
+        
+        details.top-level > summary:hover {
+            background: linear-gradient(135deg, #5a67d8 0%, #667eea 100%) !important;
+        }
+
+        details.top-level > summary::after {
+            content: "▶" !important;
+            font-size: 16px !important;
+            color: white !important;
+            transition: transform 0.3s ease !important;
+        }
+
+        details.top-level[open] > summary::after {
+            transform: rotate(90deg) !important;
+        }
+        
+        details.top-level > summary > b {
+            color: white !important;
+            font-size: 1.1rem !important;
+        }
+        
+        details.top-level > table {
+            background-color: #f8f9ff !important;
+            border-radius: 0 0 12px 12px !important;
+        }
+        
+        details.top-level > table thead th {
+            background: linear-gradient(135deg, #f1f3ff 0%, #e8ecff 100%) !important;
+            color: #4a5568 !important;
+            font-weight: 600 !important;
+            padding: 15px !important;
+        }
+        
+        details.top-level > table tbody tr td {
+            background-color: white !important;
+            border: 1px solid #e2e8f0 !important;
+            padding: 12px 10px !important;
+        }
+        
+        details.top-level > table tbody tr:hover td {
+            background-color: #f7fafc !important;
+        }
+        
+        /* Improved Table Icons */
+        details.top-level > table tbody tr td a {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 32px !important;
+            height: 32px !important;
+            border-radius: 8px !important;
+            transition: all 0.2s ease !important;
+        }
+        
+        details.top-level > table tbody tr td a:hover {
+            transform: scale(1.1) !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px !important;
+            }
+            
+            .header-section h1 {
+                font-size: 2rem !important;
+            }
+            
+            details.top-level > summary {
+                padding: 15px !important;
+                font-size: 1rem !important;
+            }
+            
+            details.top-level > table tbody tr td {
+                padding: 8px 5px !important;
+                font-size: 14px !important;
+            }
+        }
     </style>
 
     <style id="wpforms-css-vars-root">
@@ -3481,10 +3676,12 @@
 
 
 <body>
-    
-            
-    
-  
+    <div class="main-container">
+        <div class="header-section">
+            <h1>🚀 Striver's A2Z DSA Course</h1>
+            <p>Master Data Structures & Algorithms - Your Complete Guide to FAANG Success</p>
+        </div>
+        <div class="content-wrapper">
 
     <style>
         header.header {
@@ -3758,7 +3955,7 @@
         </style>
 
     <h1>Striver A2Z Sheet with GFG and LeetCode Links </h1>
-    <h3> Please Give star to this repository , Here is my Github <a href="https://github.com/Shivanshumishra23/Striver-A2Z-Sheet-with-GFG-links">Shivanshumishra23</a></h4>
+    <h3> Please Give star to this repository , Here is my Github <a href="https://github.com/AayushBarhate/Striver-A2Z-Sheet-with-GFG-links">AayushBarhate</a></h3>
     
 
 
@@ -17096,10 +17293,8 @@
             </table>
         </details>
     </details>
-
-
-
-
+        </div>
+    </div>
 </body>
 </html>
 

@@ -1,0 +1,27 @@
+# GitHub Pages configuration
+title: "Striver's A2Z DSA Course - Complete Guide"
+description: "Master Data Structures & Algorithms with Striver's comprehensive A2Z course. Includes GFG and LeetCode problem links."
+author: "AayushBarhate"
+url: "https://aayushbarhate.github.io"
+baseurl: "/Striver-A2Z-Sheet-with-GFG-links"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+timezone: UTC
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - .git/
+  - .github/
+
+# Include files that normally wouldn't be included
+include:
+  - _config.yml
+  
+# GitHub Pages specific settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
